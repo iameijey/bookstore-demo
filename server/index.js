@@ -1,4 +1,5 @@
 // Imports
+require('dotenv').config();
 const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql");
@@ -8,10 +9,10 @@ const app = express();
 
 // Database Connection
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "Password.123",
-    database: "bookstore"
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME
 })
 
 // Middlewares

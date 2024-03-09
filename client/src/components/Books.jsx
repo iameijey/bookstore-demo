@@ -12,6 +12,7 @@ function Books() {
     const fetchAllBooks = async () => {
         try {
             const response = await axios.get("http://localhost:8000/books");
+            console.log(response);
             setBooks(response.data);
         }catch(err) {
             console.log(err);
